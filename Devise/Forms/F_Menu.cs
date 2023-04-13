@@ -162,5 +162,10 @@ namespace Devise
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new F_InternetUser().ShowDialog();
+        }
     }
 }
