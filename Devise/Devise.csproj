@@ -256,6 +256,12 @@
     <Compile Include="Forms\F_D_R_Forms\F_D_R_Uchets.Designer.cs">
       <DependentUpon>F_D_R_Uchets.cs</DependentUpon>
     </Compile>
+    <Compile Include="F_D_R_InternetUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="F_D_R_InternetUser.Designer.cs">
+      <DependentUpon>F_D_R_InternetUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="F_InternetUser.cs">
       <SubType>Form</SubType>
     </Compile>

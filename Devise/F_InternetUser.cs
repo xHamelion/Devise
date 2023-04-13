@@ -21,6 +21,8 @@ namespace Devise
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.View_InternetUser". При необходимости она может быть перемещена или удалена.
             this.view_InternetUserTableAdapter.Fill(this.deviseDataSet.View_InternetUser);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.View_InternetUser". При необходимости она может быть перемещена или удалена.
+            this.view_InternetUserTableAdapter.Fill(this.deviseDataSet.View_InternetUser);
 
         }
     }

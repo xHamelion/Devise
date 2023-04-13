@@ -50,6 +50,10 @@ namespace Devise
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.deviseDataSet)).BeginInit();
@@ -64,7 +68,11 @@ namespace Devise
             this.iDInternetUserDataGridViewTextBoxColumn,
             this.fIODataGridViewTextBoxColumn,
             this.telefonDataGridViewTextBoxColumn,
-            this.eMailDataGridViewTextBoxColumn});
+            this.eMailDataGridViewTextBoxColumn,
+            this.familiaDataGridViewTextBoxColumn,
+            this.imiaDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.passDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.viewInternetUserBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-1, -2);
             this.dataGridView1.Name = "dataGridView1";
@@ -213,21 +221,45 @@ namespace Devise
             // fIODataGridViewTextBoxColumn
             // 
             this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
-            this.fIODataGridViewTextBoxColumn.HeaderText = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
             this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
             this.fIODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
             this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Телефон";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             // 
             // eMailDataGridViewTextBoxColumn
             // 
             this.eMailDataGridViewTextBoxColumn.DataPropertyName = "eMail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "eMail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "Электронная почта";
             this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // familiaDataGridViewTextBoxColumn
+            // 
+            this.familiaDataGridViewTextBoxColumn.DataPropertyName = "Familia";
+            this.familiaDataGridViewTextBoxColumn.HeaderText = "Familia";
+            this.familiaDataGridViewTextBoxColumn.Name = "familiaDataGridViewTextBoxColumn";
+            // 
+            // imiaDataGridViewTextBoxColumn
+            // 
+            this.imiaDataGridViewTextBoxColumn.DataPropertyName = "Imia";
+            this.imiaDataGridViewTextBoxColumn.HeaderText = "Imia";
+            this.imiaDataGridViewTextBoxColumn.Name = "imiaDataGridViewTextBoxColumn";
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            // 
+            // passDataGridViewTextBoxColumn
+            // 
+            this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
+            this.passDataGridViewTextBoxColumn.HeaderText = "Пароль";
+            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
             // 
             // F_InternetUser
             // 
@@ -275,5 +307,9 @@ namespace Devise
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eMailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
     }
 }
