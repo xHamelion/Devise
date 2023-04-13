@@ -31,6 +31,8 @@ namespace Devise
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.viewInternetUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.deviseDataSet = new Devise.DeviseDataSet();
             this.panel1 = new System.Windows.Forms.Panel();
             this.CB_Fio_sotr = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -43,33 +45,50 @@ namespace Devise
             this.BTN_Dob = new System.Windows.Forms.Button();
             this.BTN_Dell = new System.Windows.Forms.Button();
             this.BTN_Red = new System.Windows.Forms.Button();
-            this.deviseDataSet = new Devise.DeviseDataSet();
-            this.viewInternetUserBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.view_InternetUserTableAdapter = new Devise.DeviseDataSetTableAdapters.View_InternetUserTableAdapter();
             this.iDInternetUserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fIODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eMailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.familiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imiaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deviseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewInternetUserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviseDataSet)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDInternetUserDataGridViewTextBoxColumn,
             this.fIODataGridViewTextBoxColumn,
             this.telefonDataGridViewTextBoxColumn,
-            this.eMailDataGridViewTextBoxColumn});
+            this.eMailDataGridViewTextBoxColumn,
+            this.familiaDataGridViewTextBoxColumn,
+            this.imiaDataGridViewTextBoxColumn,
+            this.loginDataGridViewTextBoxColumn,
+            this.passDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.viewInternetUserBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(-1, -2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(804, 276);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // viewInternetUserBindingSource
+            // 
+            this.viewInternetUserBindingSource.DataMember = "View_InternetUser";
+            this.viewInternetUserBindingSource.DataSource = this.deviseDataSet;
+            // 
+            // deviseDataSet
+            // 
+            this.deviseDataSet.DataSetName = "DeviseDataSet";
+            this.deviseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel1
             // 
@@ -148,6 +167,7 @@ namespace Devise
             this.PDF.TabIndex = 104;
             this.PDF.Text = "Экспорт в PDF";
             this.PDF.UseVisualStyleBackColor = true;
+            this.PDF.Click += new System.EventHandler(this.PDF_Click);
             // 
             // Exel
             // 
@@ -158,6 +178,7 @@ namespace Devise
             this.Exel.TabIndex = 103;
             this.Exel.Text = "Экспорт в Exel";
             this.Exel.UseVisualStyleBackColor = true;
+            this.Exel.Click += new System.EventHandler(this.Exel_Click);
             // 
             // BTN_Dob
             // 
@@ -168,6 +189,7 @@ namespace Devise
             this.BTN_Dob.TabIndex = 102;
             this.BTN_Dob.Text = "Добавить";
             this.BTN_Dob.UseVisualStyleBackColor = true;
+            this.BTN_Dob.Click += new System.EventHandler(this.BTN_Dob_Click);
             // 
             // BTN_Dell
             // 
@@ -178,6 +200,7 @@ namespace Devise
             this.BTN_Dell.TabIndex = 101;
             this.BTN_Dell.Text = "Удалить";
             this.BTN_Dell.UseVisualStyleBackColor = true;
+            this.BTN_Dell.Click += new System.EventHandler(this.BTN_Dell_Click);
             // 
             // BTN_Red
             // 
@@ -188,16 +211,7 @@ namespace Devise
             this.BTN_Red.TabIndex = 100;
             this.BTN_Red.Text = "Редактировать";
             this.BTN_Red.UseVisualStyleBackColor = true;
-            // 
-            // deviseDataSet
-            // 
-            this.deviseDataSet.DataSetName = "DeviseDataSet";
-            this.deviseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // viewInternetUserBindingSource
-            // 
-            this.viewInternetUserBindingSource.DataMember = "View_InternetUser";
-            this.viewInternetUserBindingSource.DataSource = this.deviseDataSet;
+            this.BTN_Red.Click += new System.EventHandler(this.BTN_Red_Click);
             // 
             // view_InternetUserTableAdapter
             // 
@@ -209,25 +223,52 @@ namespace Devise
             this.iDInternetUserDataGridViewTextBoxColumn.HeaderText = "ID_InternetUser";
             this.iDInternetUserDataGridViewTextBoxColumn.Name = "iDInternetUserDataGridViewTextBoxColumn";
             this.iDInternetUserDataGridViewTextBoxColumn.ReadOnly = true;
+            this.iDInternetUserDataGridViewTextBoxColumn.Visible = false;
             // 
             // fIODataGridViewTextBoxColumn
             // 
             this.fIODataGridViewTextBoxColumn.DataPropertyName = "FIO";
-            this.fIODataGridViewTextBoxColumn.HeaderText = "FIO";
+            this.fIODataGridViewTextBoxColumn.HeaderText = "ФИО";
             this.fIODataGridViewTextBoxColumn.Name = "fIODataGridViewTextBoxColumn";
             this.fIODataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // telefonDataGridViewTextBoxColumn
             // 
             this.telefonDataGridViewTextBoxColumn.DataPropertyName = "Telefon";
-            this.telefonDataGridViewTextBoxColumn.HeaderText = "Telefon";
+            this.telefonDataGridViewTextBoxColumn.HeaderText = "Телефон";
             this.telefonDataGridViewTextBoxColumn.Name = "telefonDataGridViewTextBoxColumn";
             // 
             // eMailDataGridViewTextBoxColumn
             // 
             this.eMailDataGridViewTextBoxColumn.DataPropertyName = "eMail";
-            this.eMailDataGridViewTextBoxColumn.HeaderText = "eMail";
+            this.eMailDataGridViewTextBoxColumn.HeaderText = "Электронная почта";
             this.eMailDataGridViewTextBoxColumn.Name = "eMailDataGridViewTextBoxColumn";
+            // 
+            // familiaDataGridViewTextBoxColumn
+            // 
+            this.familiaDataGridViewTextBoxColumn.DataPropertyName = "Familia";
+            this.familiaDataGridViewTextBoxColumn.HeaderText = "Familia";
+            this.familiaDataGridViewTextBoxColumn.Name = "familiaDataGridViewTextBoxColumn";
+            this.familiaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // imiaDataGridViewTextBoxColumn
+            // 
+            this.imiaDataGridViewTextBoxColumn.DataPropertyName = "Imia";
+            this.imiaDataGridViewTextBoxColumn.HeaderText = "Imia";
+            this.imiaDataGridViewTextBoxColumn.Name = "imiaDataGridViewTextBoxColumn";
+            this.imiaDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Логин";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            // 
+            // passDataGridViewTextBoxColumn
+            // 
+            this.passDataGridViewTextBoxColumn.DataPropertyName = "Pass";
+            this.passDataGridViewTextBoxColumn.HeaderText = "Пароль";
+            this.passDataGridViewTextBoxColumn.Name = "passDataGridViewTextBoxColumn";
             // 
             // F_InternetUser
             // 
@@ -242,13 +283,13 @@ namespace Devise
             this.Controls.Add(this.BTN_Red);
             this.Controls.Add(this.dataGridView1);
             this.Name = "F_InternetUser";
-            this.Text = "F_InternetUser";
+            this.Text = "Интернет покупатели";
             this.Load += new System.EventHandler(this.F_InternetUser_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewInternetUserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deviseDataSet)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.deviseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewInternetUserBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +316,9 @@ namespace Devise
         private System.Windows.Forms.DataGridViewTextBoxColumn fIODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefonDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eMailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn familiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imiaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passDataGridViewTextBoxColumn;
     }
 }

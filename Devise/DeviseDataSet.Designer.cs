@@ -15857,6 +15857,14 @@ namespace Devise {
             
             private global::System.Data.DataColumn columneMail;
             
+            private global::System.Data.DataColumn columnFamilia;
+            
+            private global::System.Data.DataColumn columnImia;
+            
+            private global::System.Data.DataColumn columnLogin;
+            
+            private global::System.Data.DataColumn columnPass;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public View_InternetUserDataTable() {
@@ -15924,6 +15932,38 @@ namespace Devise {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FamiliaColumn {
+                get {
+                    return this.columnFamilia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ImiaColumn {
+                get {
+                    return this.columnImia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LoginColumn {
+                get {
+                    return this.columnLogin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn PassColumn {
+                get {
+                    return this.columnPass;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -15959,13 +15999,17 @@ namespace Devise {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public View_InternetUserRow AddView_InternetUserRow(string FIO, string Telefon, string eMail) {
+            public View_InternetUserRow AddView_InternetUserRow(string FIO, string Telefon, string eMail, string Familia, string Imia, string Login, string Pass) {
                 View_InternetUserRow rowView_InternetUserRow = ((View_InternetUserRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         FIO,
                         Telefon,
-                        eMail};
+                        eMail,
+                        Familia,
+                        Imia,
+                        Login,
+                        Pass};
                 rowView_InternetUserRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowView_InternetUserRow);
                 return rowView_InternetUserRow;
@@ -15999,6 +16043,10 @@ namespace Devise {
                 this.columnFIO = base.Columns["FIO"];
                 this.columnTelefon = base.Columns["Telefon"];
                 this.columneMail = base.Columns["eMail"];
+                this.columnFamilia = base.Columns["Familia"];
+                this.columnImia = base.Columns["Imia"];
+                this.columnLogin = base.Columns["Login"];
+                this.columnPass = base.Columns["Pass"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16012,6 +16060,14 @@ namespace Devise {
                 base.Columns.Add(this.columnTelefon);
                 this.columneMail = new global::System.Data.DataColumn("eMail", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columneMail);
+                this.columnFamilia = new global::System.Data.DataColumn("Familia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFamilia);
+                this.columnImia = new global::System.Data.DataColumn("Imia", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnImia);
+                this.columnLogin = new global::System.Data.DataColumn("Login", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLogin);
+                this.columnPass = new global::System.Data.DataColumn("Pass", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPass);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_InternetUser}, true));
                 this.columnID_InternetUser.AutoIncrement = true;
@@ -16024,6 +16080,14 @@ namespace Devise {
                 this.columnFIO.MaxLength = 101;
                 this.columnTelefon.MaxLength = 50;
                 this.columneMail.MaxLength = 50;
+                this.columnFamilia.AllowDBNull = false;
+                this.columnFamilia.MaxLength = 50;
+                this.columnImia.AllowDBNull = false;
+                this.columnImia.MaxLength = 50;
+                this.columnLogin.AllowDBNull = false;
+                this.columnLogin.MaxLength = 50;
+                this.columnPass.AllowDBNull = false;
+                this.columnPass.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20860,6 +20924,50 @@ namespace Devise {
                 }
                 set {
                     this[this.tableView_InternetUser.eMailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Familia {
+                get {
+                    return ((string)(this[this.tableView_InternetUser.FamiliaColumn]));
+                }
+                set {
+                    this[this.tableView_InternetUser.FamiliaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Imia {
+                get {
+                    return ((string)(this[this.tableView_InternetUser.ImiaColumn]));
+                }
+                set {
+                    this[this.tableView_InternetUser.ImiaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Login {
+                get {
+                    return ((string)(this[this.tableView_InternetUser.LoginColumn]));
+                }
+                set {
+                    this[this.tableView_InternetUser.LoginColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Pass {
+                get {
+                    return ((string)(this[this.tableView_InternetUser.PassColumn]));
+                }
+                set {
+                    this[this.tableView_InternetUser.PassColumn] = value;
                 }
             }
             
@@ -32139,6 +32247,10 @@ SELECT ID_InternetUser, Familia, Imia, Telefon, eMail, Login, Pass FROM Internet
             tableMapping.ColumnMappings.Add("FIO", "FIO");
             tableMapping.ColumnMappings.Add("Telefon", "Telefon");
             tableMapping.ColumnMappings.Add("eMail", "eMail");
+            tableMapping.ColumnMappings.Add("Familia", "Familia");
+            tableMapping.ColumnMappings.Add("Imia", "Imia");
+            tableMapping.ColumnMappings.Add("Login", "Login");
+            tableMapping.ColumnMappings.Add("Pass", "Pass");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -32155,7 +32267,8 @@ SELECT ID_InternetUser, Familia, Imia, Telefon, eMail, Login, Pass FROM Internet
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_InternetUser, FIO, Telefon, eMail FROM dbo.View_InternetUser";
+            this._commandCollection[0].CommandText = "SELECT ID_InternetUser, FIO, Telefon, eMail, Familia, Imia, Login, Pass FROM View" +
+                "_InternetUser";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
