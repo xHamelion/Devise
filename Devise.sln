@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Devise", "Devise\Devise.csproj", "{57F51A24-5B19-4104-A80A-6F7A3D8347E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest_Device", "UnitTest_Device\UnitTest_Device.csproj", "{CA5A7B1C-E410-4150-AC89-59DEAC39824B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57F51A24-5B19-4104-A80A-6F7A3D8347E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F51A24-5B19-4104-A80A-6F7A3D8347E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F51A24-5B19-4104-A80A-6F7A3D8347E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F51A24-5B19-4104-A80A-6F7A3D8347E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA5A7B1C-E410-4150-AC89-59DEAC39824B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA5A7B1C-E410-4150-AC89-59DEAC39824B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA5A7B1C-E410-4150-AC89-59DEAC39824B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA5A7B1C-E410-4150-AC89-59DEAC39824B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D29236BE-6E32-4D9D-9DF9-D53DF0C895DB}
+	EndGlobalSection
+EndGlobal
