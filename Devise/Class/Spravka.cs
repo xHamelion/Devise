@@ -11,10 +11,11 @@ namespace Devise
     {
         public Spravka()
         {
-            string c = "D:/Csharp_Progect/Devise/Devise/Sprav/vvedenie.htm";
+            string c = $"{AppDomain.CurrentDomain.BaseDirectory}/Sprav/index.htm";
             var op = new Process();
             op.StartInfo.FileName = c;
             op.Start();
+            op.Dispose();
         }
     }
 }

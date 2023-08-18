@@ -92,51 +92,48 @@ namespace Devise
         private void BTN_Red_Save_Click(object sender, EventArgs e)
         {
             ms.Open();
-             
-                try
-                {
-                    if (BTN_Red_Save.Text == "Сохранить")
-                    {
-                        com = new SqlCommand($"select count (*) from [Tovar] where(Tovar = '{TB_Tovar.Text}')", ms);
-                        if (Convert.ToInt32(com.ExecuteScalar()) == 0)
-                        {
-                            com = new SqlCommand($"insert into  Tovar(Tovar,Opisanie,ID_PodTip,Image)" +
-                            $" values('{TB_Tovar.Text}', '{richTextBox1.Text}', '{CB_PodTip.SelectedValue}', " +
-                            $"@Image)", ms);
-                            com.Parameters.Add(new SqlParameter("@Image", imageData)); ; 
 
-                            com.ExecuteNonQuery();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Такая запись уже есть");
-                        }
+            try
+            {
+                if (BTN_Red_Save.Text == "Сохранить")
+                {
+                    com = new SqlCommand($"select count (*) from [Tovar] where(Tovar = '{TB_Tovar.Text}')", ms);
+                    if (Convert.ToInt32(com.ExecuteScalar()) == 0)
+                    {
+                        com = new SqlCommand($"insert into  Tovar(Tovar,Opisanie,ID_PodTip,Image)" +
+                        $" values('{TB_Tovar.Text}', '{richTextBox1.Text}', '{CB_PodTip.SelectedValue}', " +
+                        $"@Image)", ms);
+                        com.Parameters.Add(new SqlParameter("@Image", imageData)); ;
+
+                        com.ExecuteNonQuery();
                     }
                     else
                     {
-                        com = new SqlCommand($"select count (*) from [Tovar] where(Tovar = '{TB_Tovar.Text}' and Opisanie = '{richTextBox1.Text}' " +
-                            $"and ID_PodTip = '{CB_PodTip.SelectedValue}')", ms);
-                            
-                        if (Convert.ToInt32(com.ExecuteScalar()) == 0)
-                        {
-                            com = new SqlCommand($"update Tovar set Tovar = '{TB_Tovar.Text}', Opisanie = '{richTextBox1.Text}', " +
-                                $"ID_PodTip = '{CB_PodTip.SelectedValue}'   where (ID_Tovar = '{ID}') ", ms);
-                            com.ExecuteNonQuery();
-
-                        }
-                        else
-                        {
-                            MessageBox.Show("Такая запись уже есть");
-                        }
+                        MessageBox.Show("Такая запись уже есть");
                     }
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Заполните все поля!!!");
+                    com = new SqlCommand($"select count (*) from [Tovar] where(Tovar = '{TB_Tovar.Text}' and Image = @Image and Opisanie = '{richTextBox1.Text}' " +
+                        $"and ID_PodTip = '{CB_PodTip.SelectedValue}')", ms);
+                    com.Parameters.Add(new SqlParameter("@Image", pictureBox1.Image));
+
+
+                    com = new SqlCommand($"update Tovar set Tovar = '{TB_Tovar.Text}', Opisanie = '{richTextBox1.Text}', " +
+                        $"ID_PodTip = '{CB_PodTip.SelectedValue}', Image = @Image   where (ID_Tovar = '{ID}') ", ms);
+                    com.Parameters.Add(new SqlParameter("@Image", imageData)); ;
+                    com.ExecuteNonQuery();
+
 
                 }
-            
-            
+            }
+            catch
+            {
+                MessageBox.Show("Заполните все поля!!!");
+
+            }
+
+
 
             ms.Close();
         }

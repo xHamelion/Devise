@@ -40,6 +40,10 @@ namespace Devise
                 comboBox1.Text = "";
                 viewPodTipBindingSource.Filter = $"PodTip = '-685531'";
             }
+            if (BTN_Red_Save.Text != "Сохранить")
+            {
+                panel1.Enabled = false;
+            }
 
 
         }
@@ -57,7 +61,7 @@ namespace Devise
                     {
                         com = new SqlCommand($"insert into Sost_Nakladna(ID_Nakladna, ID_Tovar, Koll, Zena, Summa)" +
                         $" values('{ID_Naklad}','{CB_Tovar.SelectedValue}',  '{NUP_Koll.Value}'" +
-                        $" , '{TB_Zena.Text}','{TB_Summa.Text}')", ms);
+                        $" , '{TB_Zena.Text.Replace(',', '.')}','{TB_Summa.Text.Replace(',', '.')}')", ms);
                         ////SqlMoney z = (SqlMoney)Convert.ToDouble(TB_Zena.Text);
                         ////SqlMoney s = (SqlMoney)Convert.ToDouble(TB_Summa.Text);
                         //com.Parameters.Add("@Zena", SqlDbType.Money).Value = Convert.ToDouble(TB_Summa.Text);
@@ -78,8 +82,8 @@ namespace Devise
                     {
                         com = new SqlCommand($"update Sost_Nakladna set   " +
                             $"Koll = '{NUP_Koll.Value}', " +
-                            $"Zena = '{TB_Zena.Text}', " +
-                            $"  Summa = '{TB_Summa.Text}' where (ID_Nakladna = '{ID_Naklad}' and ID_Tovar = '{ID_Tovar}') ", ms);
+                            $"Zena = '{TB_Zena.Text.Replace(',', '.')}', " +
+                            $"  Summa = '{TB_Summa.Text.Replace(',', '.')}' where (ID_Nakladna = '{ID_Naklad}' and ID_Tovar = '{ID_Tovar}') ", ms);
                         //com.Parameters.AddWithValue("@Zena", (SqlMoney)Convert.ToDouble(TB_Zena.Text));
                         //com.Parameters.AddWithValue("@Summa", (SqlMoney)Convert.ToDouble(TB_Summa.Text));
                         com.ExecuteNonQuery();
@@ -150,6 +154,15 @@ namespace Devise
             Application.OpenForms[3].Enabled = true;
             Application.OpenForms[3].Activate();
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var f = new F_D_R_Tovar();
+            f.Text = "Добавить";
+            f.BTN_Red_Save.Text = "Сохранить";
+            f.ShowDialog();
+            this.view_TovarTableAdapter.Fill(this.deviseDataSet.View_Tovar);
         }
     }
 }

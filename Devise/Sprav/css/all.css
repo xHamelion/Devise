@@ -45,14 +45,14 @@ a:visited ,*/
 .b-breadCrumbs__link:visited,
 .b-controlButtons__link,
 .b-controlButtons__link:visited {
-    color: #546e7a;
-    border-bottom-color: #a7b4ba;
+    color: #039be5;
+    border-bottom-color: #7ecaef;
 }
 
 tr.topLinkRow a,
 tr.topLinkRow a:visited {
-	color: #546e7a !important;
-	border-bottom-color: #a7b4ba !important;
+	color: #039be5 !important;
+	border-bottom-color: #7ecaef !important;
 	font-size: 8pt !important;
 }
 
@@ -63,8 +63,8 @@ h6.b-article__generatorCopyright {
 
 .b-breadCrumbs__link:hover,
 .b-controlButtons__link:hover {
-    color: #b0bec5;
-    border-bottom-color: #d5dcdf;
+    color: #81d4fa;
+    border-bottom-color: #bde7fa;
 }
 
 .b-article__generatorCopyrightLink:link,
@@ -90,7 +90,7 @@ h6.b-article__generatorCopyright {
     text-align: center;
     cursor: default;
 
-    background-color: rgb(84,110,122);
+    background-color: rgb(3,155,229);
 
     font-size: 14px;
     font-family: Arial;
@@ -250,7 +250,7 @@ html {
 /*@import url( 'work-zone.css' );*/
 .m-pageContent__side__header
 {
-    background: #263238;
+    background: #01579b;
 }
 .m-pageContent__side__header__wrapper {
     width: 100%;
@@ -268,7 +268,7 @@ html {
 
 .m-pageContent__side__footer
 {
-    background: #263238;
+    background: #01579b;
 }
 .b-workZone {
     width: 100%;
@@ -358,7 +358,7 @@ html[dir="rtl"] .m-workZone_seeAlso_itemContent {
 /*@import url( 'article.css');*/
 .b-article {
     background-color: #fafafa;
-    color: #263238;
+    color: #01579b;
     padding: 0;
 
     position: relative;
@@ -776,9 +776,9 @@ html[dir="rtl"] .b-search__labelPlaceholder {
     margin: 0;
     outline: none;
     min-height: 14px;
-    color: #263238;
+    color: #01579b;
     background-color: #fafafa;
-    border: 1px solid #263238;
+    border: 1px solid #01579b;
 }
 
 .m-search__tabs .b-search__inputText {
@@ -830,7 +830,7 @@ html[dir="rtl"] .m-search__tabs .m-search__side__submit {
 
 /*@import url( 'tree.css');*/
 .b-tree {
-    color: #263238;
+    color: #01579b;
     background-color: #fafafa;
 
     position: relative;
@@ -934,7 +934,7 @@ span.m-tree__itemText__selected {
     text-decoration: none;
 
     border-bottom: none;
-    color:#263238 !important;
+    color:#01579b !important;
 
     height: 1.6em;
 
@@ -959,13 +959,13 @@ html[dir="rtl"] .b-tree__itemLink {
 
 
 .m-tree__itemContent__selected {
-    background-color: rgb(84,110,122);
+    background-color: rgb(3,155,229);
     color: #ffffff;
 }
 
 .b-tree__itemContent:hover {
-    background-color: rgb(176,190,197);
-    color: #263238;
+    background-color: rgb(129,212,250);
+    color: #01579b;
 }
 
 .m-tree__itemContent__selected,
@@ -1659,7 +1659,7 @@ html[dir="rtl"] .b-tabs__selectorItem {
 .m-tabs__selectorItem__selected .b-tabs__selectorContent,
 .b-tabs__wrapperItems {
     background-color: #fafafa;
-    color: #263238;
+    color: #01579b;
 }
 
 .m-tabs__selectorItem__selected .b-tabs__selectorContent {
@@ -1672,7 +1672,7 @@ html[dir="rtl"] .b-tabs__selectorItem {
     position: relative;
     font-size: 0.8em;
     padding: 0.5em 1.5em 0.5em 2.0em;
-    color: #263238;
+    color: #01579b;
     cursor: default;
     white-space: pre;
 }
@@ -1694,12 +1694,12 @@ html[dir="rtl"] .b-tabs__selectorContent {
 }
 
 .m-tabs__selectorItem__selected .b-tabs__selectorContent {
-    border-bottom: 2px #546e7a solid;
+    border-bottom: 2px #039be5 solid;
 }
 
 .m-tabs__selectorItem__hovered .b-tabs__selectorContent {
-    background-color: #b0bec5;
-    color: #263238;
+    background-color: #81d4fa;
+    color: #01579b;
     cursor: pointer;
 }
 
@@ -1785,15 +1785,15 @@ html[dir="rtl"] .b-tabs__wrapperItemInner div.b-tree.vscroll {
 }
 
 .b-tabs__wrapperItemInner .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle {
-    background-color: #263238 !important;
+    background-color: #01579b !important;
 }
 
 .b-tabs__wrapperItemInner .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle {
-    background-color: rgb(84,110,122) !important;
+    background-color: rgb(3,155,229) !important;
 }
 
 .b-tabs__wrapperItemInner .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active {
-    background-color: rgb(84,110,122) !important;
+    background-color: rgb(3,155,229) !important;
 }
 
 .m-pageView__state__frame .b-tabs__wrapperItemInner {
@@ -2012,7 +2012,7 @@ div.index_page_title {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 20pt;
     text-decoration: none;
-    color: #263238;
+    color: #01579b;
     text-align: center;
     font-weight: bold;
     white-space: pre;
@@ -2033,7 +2033,7 @@ div.index_page {
     border-right: 0px;
     border-left: 0px;
     border-style: solid;
-    border-color: #263238;
+    border-color: #01579b;
     white-space: pre;
 }
 
@@ -2081,7 +2081,7 @@ div.de_ctrl > table {
 
 
 .b-workZone.m-workZone__withoutSideNav {
-    background: #263238 0 0px repeat-x;
+    background: #01579b 0 0px repeat-x;
 }
 
 .b-workZone.m-workZone__withoutSideNav .m-workZone__side__nav,
@@ -2162,7 +2162,7 @@ html[dir="rtl"] .b-pageLayout.b-pageLayout__xs .m-workZone__side__article {
     position: absolute;
     top: 0;
     left: 0;
-    color: #263238;
+    color: #01579b;
     font-size: 2em;
     line-height: 1em;
     z-index: 20;
@@ -2339,7 +2339,7 @@ html[dir="rtl"] .b-pageLayout.b-pageLayout__sm .b-workZone.m-workZone__withoutSp
     position: absolute;
     top: 0;
     right: 0;
-    color: #263238;
+    color: #01579b;
     font-size: 2em;
     line-height: 1em;
     z-index: 60;

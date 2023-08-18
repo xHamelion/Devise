@@ -33,8 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\изображение_2022-06-18_131740798 %281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
@@ -47,6 +46,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,12 +61,17 @@
   <ItemGroup>
     <Compile Include="Class\Connection.cs" />
     <Compile Include="Class\Security.cs" />
-    <Compile Include="DeviseDataSet.Designer.cs">
+    <Compile Include="DataBase\DeviseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DeviseDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Class\Exel.cs" />
+    <Compile Include="DataBase\DeviseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DeviseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\F_D_R_Forms\F_D_R_Hablon_Haract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,121 +138,127 @@
     <Compile Include="Forms\F_D_R_Forms\F_D_R_Vibitie_Nakladn.Designer.cs">
       <DependentUpon>F_D_R_Vibitie_Nakladn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_J_Postup.cs">
+    <Compile Include="Forms\F_Forms\F_History_Avtorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_J_Postup.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_History_Avtorization.Designer.cs">
+      <DependentUpon>F_History_Avtorization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\F_Forms\F_J_Postup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Forms\F_J_Postup.Designer.cs">
       <DependentUpon>F_J_Postup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_J_Vibit.cs">
+    <Compile Include="Forms\F_Forms\F_J_Vibit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_J_Vibit.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_J_Vibit.Designer.cs">
       <DependentUpon>F_J_Vibit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Kategor.cs">
+    <Compile Include="Forms\F_Forms\F_Kategor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Kategor.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Kategor.Designer.cs">
       <DependentUpon>F_Kategor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Login.cs">
+    <Compile Include="Forms\F_Forms\F_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Login.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Login.Designer.cs">
       <DependentUpon>F_Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Menu.cs">
+    <Compile Include="Forms\F_Forms\F_Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Menu.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Menu.Designer.cs">
       <DependentUpon>F_Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Pod_Kategor.cs">
+    <Compile Include="Forms\F_Forms\F_Pod_Kategor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Pod_Kategor.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Pod_Kategor.Designer.cs">
       <DependentUpon>F_Pod_Kategor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Pokup.cs">
+    <Compile Include="Forms\F_Forms\F_Pokup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Pokup.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Pokup.Designer.cs">
       <DependentUpon>F_Pokup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Postavhick.cs">
+    <Compile Include="Forms\F_Forms\F_Postavhick.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Postavhick.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Postavhick.Designer.cs">
       <DependentUpon>F_Postavhick.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Postupl_Nakladn.cs">
+    <Compile Include="Forms\F_Forms\F_Postupl_Nakladn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Postupl_Nakladn.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Postupl_Nakladn.Designer.cs">
       <DependentUpon>F_Postupl_Nakladn.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sklad.cs">
+    <Compile Include="Forms\F_Forms\F_Sklad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sklad.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sklad.Designer.cs">
       <DependentUpon>F_Sklad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sklad_Postupl.cs">
+    <Compile Include="Forms\F_Forms\F_Sklad_Postupl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sklad_Postupl.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sklad_Postupl.Designer.cs">
       <DependentUpon>F_Sklad_Postupl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sostav_J_Postupl.cs">
+    <Compile Include="Forms\F_Forms\F_Sostav_J_Postupl.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sostav_J_Postupl.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sostav_J_Postupl.Designer.cs">
       <DependentUpon>F_Sostav_J_Postupl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sost_J_Vibit.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_J_Vibit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sost_J_Vibit.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_J_Vibit.Designer.cs">
       <DependentUpon>F_Sost_J_Vibit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sost_Nakladnoi.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_Nakladnoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sost_Nakladnoi.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_Nakladnoi.Designer.cs">
       <DependentUpon>F_Sost_Nakladnoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sost_Nakladnoi_Prodag.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_Nakladnoi_Prodag.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sost_Nakladnoi_Prodag.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sost_Nakladnoi_Prodag.Designer.cs">
       <DependentUpon>F_Sost_Nakladnoi_Prodag.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Sotrudnic.cs">
+    <Compile Include="Forms\F_Forms\F_Sotrudnic.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Sotrudnic.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Sotrudnic.Designer.cs">
       <DependentUpon>F_Sotrudnic.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Tovar.cs">
+    <Compile Include="Forms\F_Forms\F_Tovar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Tovar.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Tovar.Designer.cs">
       <DependentUpon>F_Tovar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_Vibitie_Naklad.cs">
+    <Compile Include="Forms\F_Forms\F_Vibitie_Naklad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Vibitie_Naklad.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Vibitie_Naklad.Designer.cs">
       <DependentUpon>F_Vibitie_Naklad.cs</DependentUpon>
     </Compile>
     <Compile Include="Class\Null_Sklad.cs" />
     <Compile Include="Class\PDF.cs" />
     <Compile Include="Class\Peresh_Sklad.cs" />
-    <Compile Include="Forms\F_Uchets.cs">
+    <Compile Include="Forms\F_Forms\F_Uchets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_Uchets.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_Uchets.Designer.cs">
       <DependentUpon>F_Uchets.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\F_D_R_Forms\F_D_R_Uchets.cs">
@@ -262,16 +273,25 @@
     <Compile Include="Forms\F_D_R_Forms\F_D_R_InternetUser.Designer.cs">
       <DependentUpon>F_D_R_InternetUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\F_InternetUser.cs">
+    <Compile Include="Forms\F_Forms\F_InternetUser.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\F_InternetUser.Designer.cs">
+    <Compile Include="Forms\F_Forms\F_InternetUser.Designer.cs">
       <DependentUpon>F_InternetUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="Forms\F_Forms\F_Setings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\F_Forms\F_Setings.Designer.cs">
+      <DependentUpon>F_Setings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class\PereshetZakaza.cs" />
+    <Compile Include="Class\Pereshet_Jurnala_prodag.cs" />
+    <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Class\Spravka.cs" />
     <Compile Include="Class\Summ_naklad.cs" />
+    <Compile Include="Class\Timer.cs" />
     <EmbeddedResource Include="Forms\F_D_R_Forms\F_D_R_Hablon_Haract.resx">
       <DependentUpon>F_D_R_Hablon_Haract.cs</DependentUpon>
     </EmbeddedResource>
@@ -305,61 +325,64 @@
     <EmbeddedResource Include="Forms\F_D_R_Forms\F_D_R_Vibitie_Nakladn.resx">
       <DependentUpon>F_D_R_Vibitie_Nakladn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_J_Postup.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_History_Avtorization.resx">
+      <DependentUpon>F_History_Avtorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Forms\F_J_Postup.resx">
       <DependentUpon>F_J_Postup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_J_Vibit.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_J_Vibit.resx">
       <DependentUpon>F_J_Vibit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Kategor.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Kategor.resx">
       <DependentUpon>F_Kategor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Login.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Login.resx">
       <DependentUpon>F_Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Menu.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Menu.resx">
       <DependentUpon>F_Menu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Pod_Kategor.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Pod_Kategor.resx">
       <DependentUpon>F_Pod_Kategor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Pokup.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Pokup.resx">
       <DependentUpon>F_Pokup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Postavhick.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Postavhick.resx">
       <DependentUpon>F_Postavhick.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Postupl_Nakladn.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Postupl_Nakladn.resx">
       <DependentUpon>F_Postupl_Nakladn.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sklad.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sklad.resx">
       <DependentUpon>F_Sklad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sklad_Postupl.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sklad_Postupl.resx">
       <DependentUpon>F_Sklad_Postupl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sostav_J_Postupl.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sostav_J_Postupl.resx">
       <DependentUpon>F_Sostav_J_Postupl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sost_J_Vibit.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sost_J_Vibit.resx">
       <DependentUpon>F_Sost_J_Vibit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sost_Nakladnoi.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sost_Nakladnoi.resx">
       <DependentUpon>F_Sost_Nakladnoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sost_Nakladnoi_Prodag.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sost_Nakladnoi_Prodag.resx">
       <DependentUpon>F_Sost_Nakladnoi_Prodag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Sotrudnic.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Sotrudnic.resx">
       <DependentUpon>F_Sotrudnic.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Tovar.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Tovar.resx">
       <DependentUpon>F_Tovar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Vibitie_Naklad.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Vibitie_Naklad.resx">
       <DependentUpon>F_Vibitie_Naklad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_Uchets.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_Uchets.resx">
       <DependentUpon>F_Uchets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\F_D_R_Forms\F_D_R_Uchets.resx">
@@ -368,8 +391,11 @@
     <EmbeddedResource Include="Forms\F_D_R_Forms\F_D_R_InternetUser.resx">
       <DependentUpon>F_D_R_InternetUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\F_InternetUser.resx">
+    <EmbeddedResource Include="Forms\F_Forms\F_InternetUser.resx">
       <DependentUpon>F_InternetUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\F_Forms\F_Setings.resx">
+      <DependentUpon>F_Setings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -381,18 +407,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="DeviseDataSet.xsc">
+    <None Include="app.config" />
+    <None Include="DataBase\DeviseDataSet.xsc">
       <DependentUpon>DeviseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="DeviseDataSet.xsd">
+    <None Include="DataBase\DeviseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DeviseDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DeviseDataSet1.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DeviseDataSet.xss">
+    <None Include="DataBase\DeviseDataSet.xss">
       <DependentUpon>DeviseDataSet.xsd</DependentUpon>
     </None>
-    <None Include="packages.config" />
+    <None Include="AppSetings\packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -402,22 +429,1442 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sprav\de_search\0xu0030.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0031.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0032.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0033.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0034.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0035.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0036.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0037.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0038.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0039.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0041.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0042.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0043.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0045.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0049.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0050.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0058.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0410.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0411.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0412.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0413.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0414.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0415.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0416.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0417.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0418.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041a.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041b.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041c.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041d.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041e.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu041f.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0420.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0421.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0422.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0423.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0424.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0425.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0426.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0427.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu0428.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu042d.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\0xu042f.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\ids.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\de_search\prefixes.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Sprav\drex_file_list">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="AppSetings\App.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\3994371_eye_hidden_hide_invisible_private_icon.png" />
     <Content Include="Resources\3994406_eye_on_show_view_visible_icon.png" />
     <Content Include="Resources\box-clip-art-83.png" />
     <Content Include="Resources\iconfinder-warehouse-3992927_112594.ico" />
+    <Content Include="Sprav\avtorizatsiya_i_registratsiya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\avtorizatsiya_v_programme.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\css\all.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\css\printed.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\custom.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\de_style.css">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_internet_polzovatelej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_nakladnoj_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_nakladnoj_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_podtipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_pokupatelej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_postavshchikov.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_sotrudnika.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_tipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_tovara_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_tovara_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_tovara_3.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\dobavlenie_uchetnykh_zapisej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_avtorizatsiya_i_registratsiya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_avtorizatsiya_v_programme_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_avtorizatsiya_v_programme_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_avtorizatsiya_v_programme_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_bullet_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_bullet_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_bullet_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_bullet_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_bullet_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_internet_polzovatelej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_internet_polzovatelej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_internet_polzovatelej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_control_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_1_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_nakladnoj_2_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_podtipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_podtipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_podtipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_pokupatelej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_pokupatelej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_pokupatelej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_postavshchikov_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_postavshchikov_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_postavshchikov_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_sotrudnika_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_1_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_2_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_control_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_tovara_3_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_uchetnykh_zapisej_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_uchetnykh_zapisej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_uchetnykh_zapisej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_dobavlenie_uchetnykh_zapisej_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma_menyu_ooo__devajs__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma_menyu_ooo__devajs__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma_menyu_ooo__devajs__screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma_menyu_ooo__devajs__screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__pokupateli__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__pokupateli__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__postavshiki__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__postavshiki__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sklad__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sklad__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sklad__custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sotrudniki__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sotrudniki__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_forma__sotrudniki__custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_10.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_11.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_12.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_13.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_14.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_15.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_16.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_header_custom_9.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_index_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_internet_polzovateli__adm___custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_internet_polzovateli__adm___custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_internet_polzovateli__adm___custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_istoriya_vkhoda_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_istoriya_vkhoda_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_istoriya_vkhoda_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_istoriya_vkhoda_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_istoriya_vkhoda_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_kategorii_tovarov_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_kategorii_tovarov_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_kategorii_tovarov_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_kategorii_tovarov_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___control_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___control_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___control_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___control_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nastrojki__adm___screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novoe_postuplenie_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novoe_postuplenie_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novoe_postuplenie_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novoe_postuplenie_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novoe_postuplenie_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___nakladnaya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___nakladnaya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___sostav_nakladnoj_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___sostav_nakladnoj_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___sostav_nakladnoj_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_postupleniya___sostav_nakladnoj_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___nakladnaya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___nakladnaya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___sostav_nakladnoj_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___sostav_nakladnoj_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___sostav_nakladnoj_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_novye_prodazhi___sostav_nakladnoj_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nulevye_znacheniya_i_pereschitat_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_nulevye_znacheniya_i_pereschitat_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obshchie_svedeniya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obshchie_svedeniya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obshchie_svedeniya_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obshchie_svedeniya_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obshchie_svedeniya_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_custom_7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_obyazatelno_k_prochteniyu_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_podtipy_tovarov_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_podtipy_tovarov_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_postupleniya_custom_7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_prodazhi_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_prodazhi_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_prodazhi_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_prodazhi_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prinyatie_prodazhi_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prodazha_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prodazha_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prodazha_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_prodazha_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_razdel____postuplenie__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_razdel____postuplenie__custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_razdel____prodazha__custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_razdel____vidy_tovarov__screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_internet_polzovatelej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_internet_polzovatelej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_internet_polzovatelej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_1_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_nakladnoj_2_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_podtipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_podtipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_podtipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_pokupatelej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_pokupatelej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_pokupatelej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_postavshikov_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_postavshikov_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_postavshikov_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_sotrudnika_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tipa_tovara_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_1_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_2_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_2_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_2_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_3_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_3_control_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_3_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_3_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_tovara_3_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_uchetnykh_zapisej_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_uchetnykh_zapisej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_uchetnykh_zapisej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_redaktirovanie_uchetnykh_zapisej_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_registratsiya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_registratsiya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_registratsiya_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_registratsiya_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_postuplenij_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_postuplenij_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_postuplenij_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_control_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_custom_7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sostav_zhurnala_prodazh_screen_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sozdanie_shablona_kharakteristiki_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_sozdanie_shablona_kharakteristiki_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tipy_tovarov_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tipy_tovarov_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_na_sklade_po_partiyam_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_tovary_na_sklade_po_partiyam_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_uchetnye_zapisi__adm___control_1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_uchetnye_zapisi__adm___custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_uchetnye_zapisi__adm___custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_uchetnye_zapisi__adm___screen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_internet_polzovatelej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_internet_polzovatelej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_internet_polzovatelej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_nakladnoj_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_podtipa_tovara_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_pokupatelya_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_pokupatelya_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_pokupatelya_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_postavshika_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_postavshika_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_postavshika_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_sotrudnika_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tipa_tovara_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tipa_tovara_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tipa_tovara_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tipa_tovara_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tipa_tovara_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom_5.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_1_custom_6.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_3_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_3_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_3_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_tovara_3_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_uchetnykh_zapisej_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_uchetnykh_zapisej_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_uchetnykh_zapisej_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_1_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_1_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_1_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_1_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_2_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_2_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_2_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_udalenie_zhurnala_nakladnoj_2_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_postuplenij_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_postuplenij_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_postuplenij_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_postuplenij_custom_4.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_prodazh_custom.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_prodazh_custom_2.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\drex_zhurnal_prodazh_custom_3.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\forma_menyu_ooo__devajs_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\forma__pokupateli_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\forma__postavshiki_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\forma__sklad_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\forma__sotrudniki_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\index.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\internet_polzovateli__adm__.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\istoriya_vkhoda.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\interface-icons\delicious_logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\interface-icons\digg-button.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\interface-icons\interface-icons-sprite-8.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\interface-icons\interface-icons-sprite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\search\loading.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\blocks\tree\sprite.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\null.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\default-skin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\default-skin.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\grab.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\grabbing.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\preloader.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\i\photoswipe\zoom_in.cur">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\all.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\all2.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\drexplain.data.index.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\oembed.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\socialscript.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\js\tooltips.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\kategorii_tovarov.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\nastrojki__adm__.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\novoe_postuplenie.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\novye_postupleniya___nakladnaya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\novye_postupleniya___sostav_nakladnoj.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\novye_prodazhi___nakladnaya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\novye_prodazhi___sostav_nakladnoj.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\nulevye_znacheniya_i_pereschitat.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\obshchie_svedeniya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\obyazatelno_k_prochteniyu.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\podtipy_tovarov.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\prinyatie_postupleniya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\prinyatie_prodazhi.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\prodazha.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\razdel____postuplenie_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\razdel____prodazha_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\razdel____vidy_tovarov_.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_internet_polzovatelej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_nakladnoj_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_nakladnoj_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_podtipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_pokupatelej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_postavshikov.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_sotrudnika.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_tipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_tovara_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_tovara_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_tovara_3.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\redaktirovanie_uchetnykh_zapisej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\registratsiya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\sostav_zhurnala_postuplenij.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\sostav_zhurnala_prodazh.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\sozdanie_shablona_kharakteristiki.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\tipy_tovarov.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\tovary.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\tovary_na_sklade_po_partiyam.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\uchetnye_zapisi__adm__.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_internet_polzovatelej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_nakladnoj_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_nakladnoj_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_podtipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_pokupatelya.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_postavshika.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_sotrudnika.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_tipa_tovara.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_tovara_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_tovara_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_tovara_3.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_uchetnykh_zapisej.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_zhurnala_nakladnoj_1.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\udalenie_zhurnala_nakladnoj_2.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\zhurnal_postuplenij.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sprav\zhurnal_prodazh.htm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\изображение_2022-06-18_131740798 %281%29.ico" />
     <None Include="Resources\logo_n2.png" />
     <None Include="Resources\otzyvy-magazin-komputernoj-i-tsifrovoj-tehniki-pozitronika-samara-torgovo-o-1364589061.jpg" />
     <None Include="Resources\xi1yn79riC4.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Sprav\" />
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

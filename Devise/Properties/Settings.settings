@@ -10,5 +10,17 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-J96IBMI;Initial Catalog=Devise;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="Skidka" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">115</Value>
+    </Setting>
+    <Setting Name="Minuts" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
+    <Setting Name="SkidkaPension" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
+    <Setting Name="Skidka_Inaia" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">100</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

@@ -52,7 +52,12 @@ namespace Devise
         private void BTN_Red_Save_Click(object sender, EventArgs e)
         {
             ms.Open();
-
+            if(CB_PodTip.Text == "")
+            {
+                MessageBox.Show("Выберите уровень доступа!");
+                ms.Close();
+                return;
+            }
             try
             {
                 if (BTN_Red_Save.Text == "Сохранить")

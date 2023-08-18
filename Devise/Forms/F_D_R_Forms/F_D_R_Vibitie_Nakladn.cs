@@ -19,7 +19,7 @@ namespace Devise
         public string ID;
         public string Summa="0";
         public string Summa_Obh="0";
-
+        private int ID_InternetUser;
         public F_D_R_Vibitie_Nakladn()
         {
             InitializeComponent();
@@ -27,8 +27,35 @@ namespace Devise
 
         private void BTN_Red_Save_Click(object sender, EventArgs e)
         {
+
+            ms.Open();
+            com = new SqlCommand($"select count(*) from [InternetUser] where(Familia = 'Локальный пользователь' and Imia = 'Локальный пользователь')",ms);
+            if (Convert.ToInt32(com.ExecuteScalar()) == 0)
+            {
+                ms.Close();
+                ms.Open();
+                //NLdOb2OyN2k#icJFCh$
+                com = new SqlCommand($"insert into [InternetUser] values('Локальный пользователь','Локальный пользователь','Локальный пользователь','Локальный пользователь','LocalUserPKDevise','NLdOb2OyN2k#icJFCh$')", ms);
+                com.ExecuteNonQuery();
+                ms.Close();
+            }
+            else
+                ms.Close();
+
+            ms.Open();
+            com = new SqlCommand($"select ID_InternetUser from [InternetUser] where(Familia = 'Локальный пользователь' and Imia = 'Локальный пользователь')",ms);
+            SqlDataReader rd = com.ExecuteReader();
+            while (rd.Read())
+            {
+                ID_InternetUser = Convert.ToInt32( rd[0].ToString());
+
+            }
+            ms.Close();
+
+
             if (checkBox1.Checked != true)
             {
+
                 TB_Nomer.Text = DTP.Value.ToLongTimeString().Replace(' ', '\0') + comboBox1.Text.Substring(0, 3) + CB_Sotrud.Text.Substring(0, 2) +
                     DTP.Value.ToLongDateString().Replace(' ', '\0');
              
@@ -48,7 +75,7 @@ namespace Devise
                     if (Convert.ToInt32(com.ExecuteScalar()) == 0)
                     {
                         com = new SqlCommand($"insert into  Naklad_Prodag(Nomer, Data_Pokup, ID_Pokup, ID_Sotrudnic,Summa,Dostavka,Summa_Obh,ID_InternetUser)" +
-                        $" values('{TB_Nomer.Text}','{DTP.Value}', '{comboBox1.SelectedValue}','{CB_Sotrud.SelectedValue}','{Summa}','{c}','{TB_Dost.Text}','12')", ms);
+                        $" values('{TB_Nomer.Text}','{DTP.Value}', '{comboBox1.SelectedValue}','{CB_Sotrud.SelectedValue}', '{Summa}', '{c}', '{TB_Dost.Text}', '{ID_InternetUser}')", ms);
                         com.ExecuteNonQuery();
                     }
                     else
@@ -114,6 +141,15 @@ namespace Devise
             {
                 TB_Nomer.Enabled = false;
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var f = new F_D_R_Pokup();
+            f.BTN_Red_Save.Text = "Сохранить";
+            f.Text = "Добавить";
+            f.ShowDialog();
+            this.view_PokupTableAdapter.Fill(this.deviseDataSet.View_Pokup);
         }
     }
 }

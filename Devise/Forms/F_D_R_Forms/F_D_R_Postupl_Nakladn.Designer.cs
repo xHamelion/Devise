@@ -54,9 +54,10 @@ namespace Devise
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(62, 139);
+            this.label3.Location = new System.Drawing.Point(20, 136);
+            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 13);
+            this.label3.Size = new System.Drawing.Size(100, 21);
             this.label3.TabIndex = 44;
             this.label3.Text = "Поставшик";
             // 
@@ -65,9 +66,10 @@ namespace Devise
             this.comboBox1.DataSource = this.postavhickBindingSource;
             this.comboBox1.DisplayMember = "Naimenovanie_Organiz";
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(65, 155);
+            this.comboBox1.Location = new System.Drawing.Point(24, 163);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(201, 21);
+            this.comboBox1.Size = new System.Drawing.Size(332, 29);
             this.comboBox1.TabIndex = 43;
             this.comboBox1.ValueMember = "ID_Postavhick";
             // 
@@ -83,10 +85,10 @@ namespace Devise
             // 
             // BTN_Red_Save
             // 
-            this.BTN_Red_Save.Location = new System.Drawing.Point(65, 249);
-            this.BTN_Red_Save.Margin = new System.Windows.Forms.Padding(5);
+            this.BTN_Red_Save.Location = new System.Drawing.Point(24, 265);
+            this.BTN_Red_Save.Margin = new System.Windows.Forms.Padding(8);
             this.BTN_Red_Save.Name = "BTN_Red_Save";
-            this.BTN_Red_Save.Size = new System.Drawing.Size(201, 54);
+            this.BTN_Red_Save.Size = new System.Drawing.Size(378, 50);
             this.BTN_Red_Save.TabIndex = 42;
             this.BTN_Red_Save.Text = "button1";
             this.BTN_Red_Save.UseVisualStyleBackColor = true;
@@ -94,42 +96,47 @@ namespace Devise
             // 
             // DTP
             // 
-            this.DTP.Location = new System.Drawing.Point(65, 103);
+            this.DTP.Location = new System.Drawing.Point(24, 104);
+            this.DTP.Margin = new System.Windows.Forms.Padding(5);
             this.DTP.Name = "DTP";
-            this.DTP.Size = new System.Drawing.Size(201, 20);
+            this.DTP.Size = new System.Drawing.Size(379, 29);
             this.DTP.TabIndex = 41;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 87);
+            this.label2.Location = new System.Drawing.Point(20, 78);
+            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(125, 21);
             this.label2.TabIndex = 40;
             this.label2.Text = "Дата поставки";
             // 
             // TB_Nomer
             // 
-            this.TB_Nomer.Location = new System.Drawing.Point(65, 54);
+            this.TB_Nomer.Location = new System.Drawing.Point(24, 47);
+            this.TB_Nomer.Margin = new System.Windows.Forms.Padding(5);
             this.TB_Nomer.Name = "TB_Nomer";
-            this.TB_Nomer.Size = new System.Drawing.Size(201, 20);
+            this.TB_Nomer.Size = new System.Drawing.Size(379, 29);
             this.TB_Nomer.TabIndex = 39;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(62, 38);
+            this.label1.Location = new System.Drawing.Point(20, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 13);
+            this.label1.Size = new System.Drawing.Size(63, 21);
             this.label1.TabIndex = 38;
             this.label1.Text = "Номер";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(62, 193);
+            this.label4.Location = new System.Drawing.Point(20, 198);
+            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 13);
+            this.label4.Size = new System.Drawing.Size(220, 21);
             this.label4.TabIndex = 46;
             this.label4.Text = "Принимаюший сотрудник";
             // 
@@ -138,9 +145,10 @@ namespace Devise
             this.comboBox2.DataSource = this.viewSotrudnicBindingSource;
             this.comboBox2.DisplayMember = "FIO";
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(65, 209);
+            this.comboBox2.Location = new System.Drawing.Point(24, 224);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(201, 21);
+            this.comboBox2.Size = new System.Drawing.Size(332, 29);
             this.comboBox2.TabIndex = 45;
             this.comboBox2.ValueMember = "ID_Sotrudnic";
             // 
@@ -159,10 +167,10 @@ namespace Devise
             // 
             // button4
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(272, 156);
+            this.button4.Location = new System.Drawing.Point(368, 163);
+            this.button4.Margin = new System.Windows.Forms.Padding(5);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(20, 20);
+            this.button4.Size = new System.Drawing.Size(34, 28);
             this.button4.TabIndex = 54;
             this.button4.Text = "+";
             this.button4.UseVisualStyleBackColor = true;
@@ -170,10 +178,10 @@ namespace Devise
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(272, 210);
+            this.button1.Location = new System.Drawing.Point(368, 224);
+            this.button1.Margin = new System.Windows.Forms.Padding(5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.Size = new System.Drawing.Size(34, 28);
             this.button1.TabIndex = 55;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
@@ -181,9 +189,9 @@ namespace Devise
             // 
             // F_D_R_Postupl_Nakladn
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 350);
+            this.ClientSize = new System.Drawing.Size(426, 335);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.label4);
@@ -195,9 +203,12 @@ namespace Devise
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TB_Nomer);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(348, 389);
-            this.MinimumSize = new System.Drawing.Size(348, 389);
+            this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximumSize = new System.Drawing.Size(442, 374);
+            this.MinimumSize = new System.Drawing.Size(442, 374);
             this.Name = "F_D_R_Postupl_Nakladn";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_D_R_Postupl_Nakladn";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.F_D_R_Postupl_Nakladn_FormClosed);
             this.Load += new System.EventHandler(this.F_D_R_Postupl_Nakladn_Load);

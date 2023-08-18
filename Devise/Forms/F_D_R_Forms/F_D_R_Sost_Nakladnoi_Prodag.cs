@@ -25,11 +25,22 @@ namespace Devise
 
         private void F_D_R_Sost_Nakladnoi_Prodag_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.View_PodTip". При необходимости она может быть перемещена или удалена.
+            this.view_PodTipTableAdapter.Fill(this.deviseDataSet.View_PodTip);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.Tip". При необходимости она может быть перемещена или удалена.
+            this.tipTableAdapter.Fill(this.deviseDataSet.Tip);
             this.Icon = Properties.Resources.изображение_2022_06_18_131740798__1_;
             // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.View_Sklad". При необходимости она может быть перемещена или удалена.
             this.view_SkladTableAdapter.Fill(this.deviseDataSet.View_Sklad);
 
-
+            comboBox1.Text = "";
+            viewPodTipBindingSource.Filter = $"PodTip = '-685531'";
+            textBox1.Text = "";
+            viewSkladBindingSource.Filter = "";
+            if (BTN_Red_Save.Text != "Сохранить")
+            {
+                panel1.Enabled = false;
+            }
         }
 
         private void sredn_ZenaLabel2_TextChanged(object sender, EventArgs e)
@@ -46,7 +57,7 @@ namespace Devise
                     sq.Read();
                     NUP_Koll.Maximum = (int)sq[0];
                     sq.Close();
-                    c = (double.Parse(sredn_ZenaLabel2.Text) * ((double.Parse(Properties.Resources.String1) / 100.0) + 1.0)).ToString();
+                    c = (double.Parse(sredn_ZenaLabel2.Text) * ((Convert.ToDouble(Properties.Settings.Default.Skidka) / 100.0) )).ToString();
                     if (c.IndexOf(',') > 0)
                         label8.Text = c.Substring(0, c.IndexOf(','));
                     else
@@ -80,7 +91,7 @@ namespace Devise
                     if (Convert.ToInt32(com.ExecuteScalar()) == 0)
                     {
                         com = new SqlCommand($"insert into Sost_Naklad_Prodag(ID_Naklad_Prodag, ID_Tovar, Koll, Zena ,Summa)" +
-                        $" values('{ID_Naklad}','{CB_Tovar.SelectedValue}', '{NUP_Koll.Value}','{TB_Zena.Text}', '{TB_Summa.Text}'" +
+                        $" values('{ID_Naklad}','{CB_Tovar.SelectedValue}', '{NUP_Koll.Value}','{TB_Zena.Text.Replace(',','.')}', '{TB_Summa.Text.Replace(',', '.')}'" +
                         $" )", ms);
                         ////SqlMoney z = (SqlMoney)Convert.ToDouble(TB_Zena.Text);
                         ////SqlMoney s = (SqlMoney)Convert.ToDouble(TB_Summa.Text);
@@ -97,13 +108,13 @@ namespace Devise
                 else
                 {
                     com = new SqlCommand($"select count (*) from [Sost_Naklad_Prodag] where(ID_Tovar = '{CB_Tovar.SelectedValue}' and ID_Naklad_Prodag = " +
-                        $"'{ID_Naklad}' and Koll = '{NUP_Koll.Value}' and Zena = '{TB_Zena.Text}')", ms);
+                        $"'{ID_Naklad}' and Koll = '{NUP_Koll.Value}' and Summa = '{TB_Summa.Text.Replace(',', '.')}' )", ms);
                     if (Convert.ToInt32(com.ExecuteScalar()) == 0)
                     {
                         com = new SqlCommand($"update Sost_Naklad_Prodag set   " +
                             $"Koll = '{NUP_Koll.Value}', " +
-                            $"Zena = '{TB_Zena.Text}', " +
-                            $"  Summa = '{TB_Summa.Text}' where (ID_Naklad_Prodag = '{ID_Naklad}' and ID_Tovar = '{ID_Tov}') ", ms);
+                            $"Zena = '{TB_Zena.Text.Replace(',', '.')}', " +
+                            $"  Summa = '{TB_Summa.Text.Replace(',', '.')}' where (ID_Naklad_Prodag = '{ID_Naklad}' and ID_Tovar = '{ID_Tov}') ", ms);
                         //com.Parameters.AddWithValue("@Zena", (SqlMoney)Convert.ToDouble(TB_Zena.Text));
                         //com.Parameters.AddWithValue("@Summa", (SqlMoney)Convert.ToDouble(TB_Summa.Text));
                         com.ExecuteNonQuery();
@@ -111,7 +122,7 @@ namespace Devise
                     }
                     else
                     {
-                        MessageBox.Show("Такая запись уже естьЫ");
+                        MessageBox.Show("Такая запись уже есть");
                     }
                 }
             }
@@ -131,7 +142,7 @@ namespace Devise
         {
             try
             {
-                TB_Summa.Text = (int.Parse(TB_Zena.Text) * int.Parse(NUP_Koll.Value.ToString())).ToString();
+                TB_Summa.Text = (double.Parse(TB_Zena.Text) * double.Parse(NUP_Koll.Value.ToString())).ToString();
             }
             catch
             {
@@ -144,7 +155,7 @@ namespace Devise
 
             try
             {
-                TB_Summa.Text = (int.Parse(TB_Zena.Text) * int.Parse(NUP_Koll.Value.ToString())).ToString();
+                TB_Summa.Text = (double.Parse(TB_Zena.Text) * double.Parse(NUP_Koll.Value.ToString())).ToString();
             }
             catch
             {
@@ -156,6 +167,79 @@ namespace Devise
         {
             Application.OpenForms[3].Enabled = true;
             Application.OpenForms[3].Activate();
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if((sender as CheckBox).Checked)
+            {
+                TB_Zena.Text = label8.Text;
+
+            }
+            CheckRadioButton();
+        }
+
+        private void CheckRadioButton()
+        {
+            double zen = 0;
+            if (checkBox1.Checked)
+                TB_Zena.Text = label8.Text;
+            try
+            {
+                 zen = Convert.ToDouble(TB_Zena.Text);
+
+            }
+            catch { return; }
+            if (radioButton1.Checked)
+            {
+                TB_Zena.Text = (zen).ToString();
+            }
+            else if (radioButton2.Checked)
+            {
+                TB_Zena.Text = (zen - ((zen * (Properties.Settings.Default.SkidkaPension / 100.0)) - zen)).ToString();
+            }
+            else
+                TB_Zena.Text = (zen - ((zen * (Properties.Settings.Default.Skidka_Inaia / 100.0)) - zen)).ToString();
+
+        }
+
+        private void CB_Tovar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                TB_Zena.Text = label8.Text;
+        }
+
+        private void label8_TextChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+                TB_Zena.Text = label8.Text;
+            CheckRadioButton();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckRadioButton();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            viewSkladBindingSource.Filter = $"Tip = '{comboBox1.Text}' and PodTip = '{comboBox2.Text}'" +
+               $"and Tovar like '%{textBox1.Text}%' ";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            comboBox1.Text = "";
+            viewPodTipBindingSource.Filter = $"PodTip = '-685531'";
+            textBox1.Text = "";
+            viewSkladBindingSource.Filter = "";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            viewPodTipBindingSource.Filter = $"ID_Tip = '{comboBox1.SelectedValue}'";
 
         }
     }

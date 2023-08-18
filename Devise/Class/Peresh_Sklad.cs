@@ -35,9 +35,14 @@ namespace Devise
                     sred_Sum += Convert.ToInt32(sq[10]);
                     koll += (int)sq[8];
                 }
-                sred_Sum = sred_Sum / koll;
+                try
+                {
+                    sred_Sum = sred_Sum / koll;
+
+                }
+                catch { }
                 sq.Close();
-                com = new SqlCommand($"update Sklad set Koll = '{koll}', Sredn_Zena ='{sred_Sum}' " +
+                com = new SqlCommand($"update Sklad set Koll = '{koll}', Sredn_Zena ='{sred_Sum}', Nazenka = '{Properties.Settings.Default.Skidka}' " +
                     $"where(ID_Tovar = '{dataGridView.Rows[i].Cells[1].Value}')", ms);
                 com.ExecuteNonQuery();
 

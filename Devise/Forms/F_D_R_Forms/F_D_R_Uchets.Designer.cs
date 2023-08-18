@@ -173,6 +173,7 @@ namespace Devise
             this.MaximumSize = new System.Drawing.Size(597, 325);
             this.MinimumSize = new System.Drawing.Size(597, 325);
             this.Name = "F_D_R_Uchets";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_D_R_Uchets";
             this.Load += new System.EventHandler(this.F_D_R_Uchets_Load);
             this.ResumeLayout(false);

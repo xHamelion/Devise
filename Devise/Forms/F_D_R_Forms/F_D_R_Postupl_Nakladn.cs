@@ -30,7 +30,8 @@ namespace Devise
             this.postavhickTableAdapter.Fill(this.deviseDataSet.Postavhick);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "deviseDataSet.View_Sotrudnic". При необходимости она может быть перемещена или удалена.
             this.view_SotrudnicTableAdapter.Fill(this.deviseDataSet.View_Sotrudnic);
-
+            if (Holder.level != 0)
+                button1.Enabled = false;
         }
 
         private void BTN_Red_Save_Click(object sender, EventArgs e)
@@ -77,14 +78,20 @@ namespace Devise
 
         private void button4_Click(object sender, EventArgs e)
         {
-            new F_D_R_Postavhick().ShowDialog();
+            var f = new F_D_R_Postavhick();
+            f.Text = "Добавить";
+            f.BTN_Red_Save.Text = "Сохранить";
+            f.ShowDialog();
             this.postavhickTableAdapter.Fill(this.deviseDataSet.Postavhick);
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            new F_D_R_Sotrudnic().ShowDialog();
+            var f = new F_D_R_Sotrudnic();
+            f.Text = "Добавить";
+            f.BTN_Red_Save.Text = "Сохранить";
+            f.ShowDialog();
             this.view_SotrudnicTableAdapter.Fill(this.deviseDataSet.View_Sotrudnic);
         }
 

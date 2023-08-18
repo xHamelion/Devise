@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace Devise
 {
@@ -11,7 +12,7 @@ namespace Devise
     {
         public SqlConnection Sql()
         {
-            SqlConnection ms = new SqlConnection(@"Data Source=DESKTOP-J96IBMI;Initial Catalog=Devise;Integrated Security=True");
+            SqlConnection ms = new SqlConnection( ConfigurationManager.ConnectionStrings["Devise.Properties.Settings.DeviseConnectionString"].ConnectionString);
 
             return ms;
         }

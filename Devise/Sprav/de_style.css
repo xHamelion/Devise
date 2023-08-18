@@ -81,23 +81,38 @@ font-style:italic;
 text-decoration:none;
 font-weight:normal;
 }
-img.de_75F9C4A440
-{
-margin-top: 3px; margin-right: 3px; margin-bottom: 3px; margin-left: 3px;}
 img.de_780D01ADE8
 {
 margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px;}
 img.de_D7A9C94272
 {
 margin-top: 8px; margin-right: 8px; margin-bottom: 8px; margin-left: 8px;}
-span.de_A2F40654B9
+span.de_1376058C6C
+{
+	font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12pt;
+	color:#000000;
+}
+span.de_B261420348
+{
+	font-size: 14pt;
+}
+span.de_CAB14B116D
 {
 	font-family: "Times New Roman";
+	font-size: 14pt;
+	color:#000000;
 }
 span.de_DB90E9E540
 {
 	font-family: "Times New Roman";
 	font-size: 14pt;
+}
+span.de_E71183D815
+{
+	font-family: "Times New Roman";
+	font-size: 13pt;
+	color:#000000;
 }
 .list-element {
 	list-style-type: none;

@@ -48,13 +48,16 @@ namespace Devise
                 }
                 else
                 {
-                    com = new SqlCommand($"select count (*) from [InternetUser] where(Login = '{textBox4.Text}' )", ms);
-                    if (Convert.ToInt32(com.ExecuteScalar()) > 1)
+                    com = new SqlCommand($"select count (*) from [InternetUser] where(Login = '{textBox4.Text}' and Pass = '{textBox5.Text}' and " +
+                        $"Familia = '{TB_Tip.Text}' and Imia = '{textBox1.Text}' and Telefon = '{textBox2.Text}' and  eMail = '{textBox3.Text}')", ms);
+                    if (Convert.ToInt32(com.ExecuteScalar()) == 0)
                     {
+                        ms.Close();
+                        ms.Open();
                         com = new SqlCommand($"update InternetUser set Familia = '{TB_Tip.Text}', Imia = '{textBox1.Text}'," +
-                            $" Telefon = '{textBox2.Text}', eMail = '{textBox3.Text}', Login = '{textBox4.Text}', Pass = '{textBox5.Text}'   where (ID_PodTip = '{ID}') ", ms);
+                            $" Telefon = '{textBox2.Text}', eMail = '{textBox3.Text}', Login = '{textBox4.Text}', Pass = '{textBox5.Text}'   where (ID_InternetUser = '{ID}') ", ms);
                         com.ExecuteNonQuery();
-
+                        ms.Close();
                     }
                     else
                     {

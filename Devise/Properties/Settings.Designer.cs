@@ -32,5 +32,53 @@ namespace Devise.Properties {
                 return ((string)(this["DeviseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("115")]
+        public int Skidka {
+            get {
+                return ((int)(this["Skidka"]));
+            }
+            set {
+                this["Skidka"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int Minuts {
+            get {
+                return ((int)(this["Minuts"]));
+            }
+            set {
+                this["Minuts"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int SkidkaPension {
+            get {
+                return ((int)(this["SkidkaPension"]));
+            }
+            set {
+                this["SkidkaPension"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
+        public int Skidka_Inaia {
+            get {
+                return ((int)(this["Skidka_Inaia"]));
+            }
+            set {
+                this["Skidka_Inaia"] = value;
+            }
+        }
     }
 }

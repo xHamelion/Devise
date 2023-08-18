@@ -38,9 +38,10 @@ namespace Devise
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox1.Location = new System.Drawing.Point(20, 19);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(5);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(435, 139);
+            this.richTextBox1.Size = new System.Drawing.Size(722, 274);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
@@ -48,10 +49,10 @@ namespace Devise
             // 
             this.BTN_Red_Save.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BTN_Red_Save.Location = new System.Drawing.Point(14, 168);
-            this.BTN_Red_Save.Margin = new System.Windows.Forms.Padding(5);
+            this.BTN_Red_Save.Location = new System.Drawing.Point(23, 306);
+            this.BTN_Red_Save.Margin = new System.Windows.Forms.Padding(8);
             this.BTN_Red_Save.Name = "BTN_Red_Save";
-            this.BTN_Red_Save.Size = new System.Drawing.Size(431, 54);
+            this.BTN_Red_Save.Size = new System.Drawing.Size(718, 52);
             this.BTN_Red_Save.TabIndex = 59;
             this.BTN_Red_Save.Text = "Сохранить";
             this.BTN_Red_Save.UseVisualStyleBackColor = true;
@@ -59,13 +60,16 @@ namespace Devise
             // 
             // F_D_R_Hablon_Haract
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 236);
+            this.ClientSize = new System.Drawing.Size(765, 381);
             this.Controls.Add(this.BTN_Red_Save);
             this.Controls.Add(this.richTextBox1);
-            this.MinimumSize = new System.Drawing.Size(475, 275);
+            this.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Margin = new System.Windows.Forms.Padding(5);
+            this.MinimumSize = new System.Drawing.Size(781, 420);
             this.Name = "F_D_R_Hablon_Haract";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Шаблон заполнения характеристики товара";
             this.Load += new System.EventHandler(this.F_D_R_Hablon_Haract_Load);
             this.ResumeLayout(false);
